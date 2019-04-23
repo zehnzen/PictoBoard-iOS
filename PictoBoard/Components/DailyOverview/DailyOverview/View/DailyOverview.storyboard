@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ykA-1z-8g0">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Daily Overview View Controller-->
+        <scene sceneID="gIA-TS-8Xs">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ykA-1z-8g0" customClass="DailyOverviewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="32D-ZW-Rwh">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYX-lm-IuE">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="633"/>
+                                <connections>
+                                    <segue destination="NT5-eI-pLK" kind="embed" id="409-0f-dhn"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNe-qx-1Fw">
+                                <rect key="frame" x="0.0" y="653" width="1024" height="115"/>
+                                <connections>
+                                    <segue destination="0Hb-pz-uXl" kind="embed" id="B50-mj-dJk"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5nW-Bi-vDj" firstAttribute="trailing" secondItem="KYX-lm-IuE" secondAttribute="trailing" id="0Vf-fW-fer"/>
+                            <constraint firstItem="dNe-qx-1Fw" firstAttribute="top" secondItem="KYX-lm-IuE" secondAttribute="bottom" id="EWz-XH-q70"/>
+                            <constraint firstItem="dNe-qx-1Fw" firstAttribute="height" secondItem="32D-ZW-Rwh" secondAttribute="height" multiplier="0.15" id="Ihx-FN-0Ps"/>
+                            <constraint firstItem="KYX-lm-IuE" firstAttribute="leading" secondItem="5nW-Bi-vDj" secondAttribute="leading" id="Mu8-XN-Zic"/>
+                            <constraint firstItem="dNe-qx-1Fw" firstAttribute="leading" secondItem="5nW-Bi-vDj" secondAttribute="leading" id="Oei-T7-a8U"/>
+                            <constraint firstItem="5nW-Bi-vDj" firstAttribute="trailing" secondItem="dNe-qx-1Fw" secondAttribute="trailing" id="gaz-Rk-UoP"/>
+                            <constraint firstItem="KYX-lm-IuE" firstAttribute="top" secondItem="5nW-Bi-vDj" secondAttribute="top" id="qfZ-z0-LzK"/>
+                            <constraint firstItem="5nW-Bi-vDj" firstAttribute="bottom" secondItem="dNe-qx-1Fw" secondAttribute="bottom" id="sR7-9R-3ns"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5nW-Bi-vDj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDo-i8-dp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="MA7-gU-RbU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="0Hb-pz-uXl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDf-jx-B2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15" y="785"/>
+        </scene>
+        <!--DailyTasks-->
+        <scene sceneID="NvL-xy-hGJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DailyTasks" id="NT5-eI-pLK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPr-dN-RB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="215"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,812 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034C41C12264B95B003CAE03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41C02264B95B003CAE03 /* AppDelegate.swift */; };
+		034C41C32264B95B003CAE03 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41C22264B95B003CAE03 /* MainNavigationController.swift */; };
+		034C41C62264B95B003CAE03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C41C42264B95B003CAE03 /* Main.storyboard */; };
+		034C41C82264B95C003CAE03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034C41C72264B95C003CAE03 /* Assets.xcassets */; };
+		034C41CB2264B95C003CAE03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C41C92264B95C003CAE03 /* LaunchScreen.storyboard */; };
+		034C41DD2264CCC7003CAE03 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41DC2264CCC7003CAE03 /* MainViewController.swift */; };
+		034C41E52264D69A003CAE03 /* DailyOverview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C41E42264D69A003CAE03 /* DailyOverview.storyboard */; };
+		034C41E72264D8F2003CAE03 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C41E62264D8F2003CAE03 /* Settings.storyboard */; };
+		034C41E92264D90F003CAE03 /* DailyTasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C41E82264D90F003CAE03 /* DailyTasks.storyboard */; };
+		034C41F22264EB38003CAE03 /* DailyTodoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41F12264EB38003CAE03 /* DailyTodoCollectionVC.swift */; };
+		034C41F42264EB53003CAE03 /* DailyPlanningCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41F32264EB53003CAE03 /* DailyPlanningCollectionVC.swift */; };
+		034C41F6226A144C003CAE03 /* LockSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41F5226A144C003CAE03 /* LockSettingsViewController.swift */; };
+		034C41F8226A147C003CAE03 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41F7226A147C003CAE03 /* SettingsViewController.swift */; };
+		034C41FC226A1E72003CAE03 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C41FB226A1E72003CAE03 /* Categories.storyboard */; };
+		034C41FE226A1F31003CAE03 /* CategoryCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41FD226A1F31003CAE03 /* CategoryCollectionVC.swift */; };
+		034C4202226A1FA1003CAE03 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4201226A1FA1003CAE03 /* CategoryCollectionCell.swift */; };
+		034C4204226A238F003CAE03 /* DailyTasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4203226A238F003CAE03 /* DailyTasksVC.swift */; };
+		034C4207226A25AD003CAE03 /* CategoryOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4206226A25AD003CAE03 /* CategoryOverviewViewModel.swift */; };
+		034C420C226A284D003CAE03 /* CategoriesFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C420B226A284D003CAE03 /* CategoriesFileStore.swift */; };
+		034C422A226A561A003CAE03 /* Picto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4229226A561A003CAE03 /* Picto.swift */; };
+		034C422D226A565A003CAE03 /* PictoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C422C226A565A003CAE03 /* PictoCategory.swift */; };
+		034C423B226A5FCB003CAE03 /* DirectoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C423A226A5FCB003CAE03 /* DirectoryHelper.swift */; };
+		034C423E226A6786003CAE03 /* PictoOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C423D226A6786003CAE03 /* PictoOverviewViewModel.swift */; };
+		034C4245226B6D4F003CAE03 /* SelectedPictoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4244226B6D4F003CAE03 /* SelectedPictoStore.swift */; };
+		034C4247226B6DAC003CAE03 /* UserDefaultPictoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4246226B6DAC003CAE03 /* UserDefaultPictoStorage.swift */; };
+		034C424E226F8F4E003CAE03 /* CategoryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034C424D226F8F4E003CAE03 /* CategoryCollectionCell.xib */; };
+		034C4250226F99CB003CAE03 /* PictoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C424F226F99CB003CAE03 /* PictoCollectionVC.swift */; };
+		034C4252226FAE64003CAE03 /* Pictos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C4251226FAE64003CAE03 /* Pictos.storyboard */; };
+		034C4255226FAF85003CAE03 /* PictoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4254226FAF85003CAE03 /* PictoCollectionCell.swift */; };
+		034C4257226FB079003CAE03 /* PictoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034C4256226FB079003CAE03 /* PictoCollectionCell.xib */; };
+		3D15C0B7B0EBEE9B8976DA9E /* Pods_PictoBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9EF5B02E65C106874FCE78 /* Pods_PictoBoard.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		034C4220226A504F003CAE03 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		034C41BD2264B95B003CAE03 /* PictoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		034C41C02264B95B003CAE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		034C41C22264B95B003CAE03 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		034C41C72264B95C003CAE03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		034C41CC2264B95C003CAE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034C41D82264C20E003CAE03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		034C41D92264C20E003CAE03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		034C41DC2264CCC7003CAE03 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		034C41E42264D69A003CAE03 /* DailyOverview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyOverview.storyboard; sourceTree = "<group>"; };
+		034C41E62264D8F2003CAE03 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		034C41E82264D90F003CAE03 /* DailyTasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyTasks.storyboard; sourceTree = "<group>"; };
+		034C41F12264EB38003CAE03 /* DailyTodoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTodoCollectionVC.swift; sourceTree = "<group>"; };
+		034C41F32264EB53003CAE03 /* DailyPlanningCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPlanningCollectionVC.swift; sourceTree = "<group>"; };
+		034C41F5226A144C003CAE03 /* LockSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockSettingsViewController.swift; sourceTree = "<group>"; };
+		034C41F7226A147C003CAE03 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		034C41FB226A1E72003CAE03 /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
+		034C41FD226A1F31003CAE03 /* CategoryCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionVC.swift; sourceTree = "<group>"; };
+		034C4201226A1FA1003CAE03 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
+		034C4203226A238F003CAE03 /* DailyTasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksVC.swift; sourceTree = "<group>"; };
+		034C4206226A25AD003CAE03 /* CategoryOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOverviewViewModel.swift; sourceTree = "<group>"; };
+		034C420B226A284D003CAE03 /* CategoriesFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFileStore.swift; sourceTree = "<group>"; };
+		034C4216226A504F003CAE03 /* PictoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictoData.h; sourceTree = "<group>"; };
+		034C4217226A504F003CAE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034C4229226A561A003CAE03 /* Picto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picto.swift; sourceTree = "<group>"; };
+		034C422C226A565A003CAE03 /* PictoCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictoCategory.swift; sourceTree = "<group>"; };
+		034C423A226A5FCB003CAE03 /* DirectoryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryHelper.swift; sourceTree = "<group>"; };
+		034C423D226A6786003CAE03 /* PictoOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictoOverviewViewModel.swift; sourceTree = "<group>"; };
+		034C4244226B6D4F003CAE03 /* SelectedPictoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPictoStore.swift; sourceTree = "<group>"; };
+		034C4246226B6DAC003CAE03 /* UserDefaultPictoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultPictoStorage.swift; sourceTree = "<group>"; };
+		034C424D226F8F4E003CAE03 /* CategoryCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionCell.xib; sourceTree = "<group>"; };
+		034C424F226F99CB003CAE03 /* PictoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictoCollectionVC.swift; sourceTree = "<group>"; };
+		034C4251226FAE64003CAE03 /* Pictos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pictos.storyboard; sourceTree = "<group>"; };
+		034C4254226FAF85003CAE03 /* PictoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictoCollectionCell.swift; sourceTree = "<group>"; };
+		034C4256226FB079003CAE03 /* PictoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictoCollectionCell.xib; sourceTree = "<group>"; };
+		799E684E5330DF39F31880B4 /* Pods-PictoBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictoBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictoBoard/Pods-PictoBoard.release.xcconfig"; sourceTree = "<group>"; };
+		9D9C076735396A984BF50BB0 /* Pods-PictoBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictoBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictoBoard/Pods-PictoBoard.debug.xcconfig"; sourceTree = "<group>"; };
+		DF9EF5B02E65C106874FCE78 /* Pods_PictoBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictoBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		034C41BA2264B95B003CAE03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D15C0B7B0EBEE9B8976DA9E /* Pods_PictoBoard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034C41B42264B95B003CAE03 = {
+			isa = PBXGroup;
+			children = (
+				034C41BF2264B95B003CAE03 /* PictoBoard */,
+				034C4215226A504F003CAE03 /* PictoData */,
+				034C41BE2264B95B003CAE03 /* Products */,
+				44D870B8D32188CD140395D9 /* Pods */,
+				2FA7569FCDBCB4AB542E9442 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		034C41BE2264B95B003CAE03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				034C41BD2264B95B003CAE03 /* PictoBoard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		034C41BF2264B95B003CAE03 /* PictoBoard */ = {
+			isa = PBXGroup;
+			children = (
+				034C423F226B6AFC003CAE03 /* Extensions */,
+				034C4238226A5FAD003CAE03 /* Helpers */,
+				034C4227226A53D3003CAE03 /* Data */,
+				034C41D32264C077003CAE03 /* App */,
+				034C41DE2264D571003CAE03 /* Components */,
+				034C41D62264C132003CAE03 /* Resources */,
+				034C41D72264C147003CAE03 /* Supporting Files */,
+			);
+			path = PictoBoard;
+			sourceTree = "<group>";
+		};
+		034C41D22264BF88003CAE03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034C41C42264B95B003CAE03 /* Main.storyboard */,
+				034C41C92264B95C003CAE03 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		034C41D32264C077003CAE03 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				034C4243226B6D19003CAE03 /* Storage */,
+				034C41D52264C0FA003CAE03 /* Controller */,
+				034C41D42264C0B2003CAE03 /* View Controller */,
+				034C41D22264BF88003CAE03 /* View */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		034C41D42264C0B2003CAE03 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				034C41C22264B95B003CAE03 /* MainNavigationController.swift */,
+				034C41DC2264CCC7003CAE03 /* MainViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		034C41D52264C0FA003CAE03 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				034C41C02264B95B003CAE03 /* AppDelegate.swift */,
+				034C420B226A284D003CAE03 /* CategoriesFileStore.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		034C41D62264C132003CAE03 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				034C41C72264B95C003CAE03 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		034C41D72264C147003CAE03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				034C41CC2264B95C003CAE03 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		034C41DE2264D571003CAE03 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				034C41DF2264D581003CAE03 /* DailyOverview */,
+				034C41E02264D5C4003CAE03 /* Categories */,
+				034C41E12264D605003CAE03 /* Pictos */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		034C41DF2264D581003CAE03 /* DailyOverview */ = {
+			isa = PBXGroup;
+			children = (
+				034C41EA2264EA5D003CAE03 /* DailyOverview */,
+				034C41EC2264EA86003CAE03 /* DailyTasks */,
+				034C41EB2264EA7D003CAE03 /* Settings */,
+			);
+			path = DailyOverview;
+			sourceTree = "<group>";
+		};
+		034C41E02264D5C4003CAE03 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				034C4205226A24AB003CAE03 /* View Model */,
+				034C41FA226A1E57003CAE03 /* View Controller */,
+				034C41FF226A1F80003CAE03 /* Cells */,
+				034C41F9226A1E40003CAE03 /* View */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		034C41E12264D605003CAE03 /* Pictos */ = {
+			isa = PBXGroup;
+			children = (
+				034C423C226A66ED003CAE03 /* View Model */,
+				034C4249226F89C7003CAE03 /* View Controller */,
+				034C4248226F89C0003CAE03 /* Cells */,
+				034C424A226F89CD003CAE03 /* View */,
+			);
+			path = Pictos;
+			sourceTree = "<group>";
+		};
+		034C41E22264D671003CAE03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034C41E42264D69A003CAE03 /* DailyOverview.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		034C41E32264D67D003CAE03 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		034C41EA2264EA5D003CAE03 /* DailyOverview */ = {
+			isa = PBXGroup;
+			children = (
+				034C41E32264D67D003CAE03 /* View Controller */,
+				034C41E22264D671003CAE03 /* View */,
+			);
+			path = DailyOverview;
+			sourceTree = "<group>";
+		};
+		034C41EB2264EA7D003CAE03 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				034C41F02264EACE003CAE03 /* View Controller */,
+				034C41EF2264EAC9003CAE03 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		034C41EC2264EA86003CAE03 /* DailyTasks */ = {
+			isa = PBXGroup;
+			children = (
+				034C41EE2264EABD003CAE03 /* View Controller */,
+				034C41ED2264EAB4003CAE03 /* View */,
+			);
+			path = DailyTasks;
+			sourceTree = "<group>";
+		};
+		034C41ED2264EAB4003CAE03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034C41E82264D90F003CAE03 /* DailyTasks.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		034C41EE2264EABD003CAE03 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				034C41F12264EB38003CAE03 /* DailyTodoCollectionVC.swift */,
+				034C41F32264EB53003CAE03 /* DailyPlanningCollectionVC.swift */,
+				034C4203226A238F003CAE03 /* DailyTasksVC.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		034C41EF2264EAC9003CAE03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034C41E62264D8F2003CAE03 /* Settings.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		034C41F02264EACE003CAE03 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				034C41F5226A144C003CAE03 /* LockSettingsViewController.swift */,
+				034C41F7226A147C003CAE03 /* SettingsViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		034C41F9226A1E40003CAE03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034C41FB226A1E72003CAE03 /* Categories.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		034C41FA226A1E57003CAE03 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				034C41FD226A1F31003CAE03 /* CategoryCollectionVC.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		034C41FF226A1F80003CAE03 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				034C4201226A1FA1003CAE03 /* CategoryCollectionCell.swift */,
+				034C424C226F8F0D003CAE03 /* View */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		034C4205226A24AB003CAE03 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				034C4206226A25AD003CAE03 /* CategoryOverviewViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		034C4215226A504F003CAE03 /* PictoData */ = {
+			isa = PBXGroup;
+			children = (
+				034C4221226A507C003CAE03 /* Core */,
+				034C4222226A508D003CAE03 /* Model */,
+				034C4216226A504F003CAE03 /* PictoData.h */,
+				034C4217226A504F003CAE03 /* Info.plist */,
+			);
+			path = PictoData;
+			sourceTree = "<group>";
+		};
+		034C4221226A507C003CAE03 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		034C4222226A508D003CAE03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		034C4227226A53D3003CAE03 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				034C4228226A53DA003CAE03 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		034C4228226A53DA003CAE03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				034C4229226A561A003CAE03 /* Picto.swift */,
+				034C422C226A565A003CAE03 /* PictoCategory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		034C4238226A5FAD003CAE03 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				034C4239226A5FB2003CAE03 /* Directories */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		034C4239226A5FB2003CAE03 /* Directories */ = {
+			isa = PBXGroup;
+			children = (
+				034C423A226A5FCB003CAE03 /* DirectoryHelper.swift */,
+			);
+			path = Directories;
+			sourceTree = "<group>";
+		};
+		034C423C226A66ED003CAE03 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				034C423D226A6786003CAE03 /* PictoOverviewViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		034C423F226B6AFC003CAE03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		034C4243226B6D19003CAE03 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				034C4244226B6D4F003CAE03 /* SelectedPictoStore.swift */,
+				034C4246226B6DAC003CAE03 /* UserDefaultPictoStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		034C4248226F89C0003CAE03 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				034C4254226FAF85003CAE03 /* PictoCollectionCell.swift */,
+				034C4253226FAF5F003CAE03 /* View */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		034C4249226F89C7003CAE03 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				034C424F226F99CB003CAE03 /* PictoCollectionVC.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		034C424A226F89CD003CAE03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034C4251226FAE64003CAE03 /* Pictos.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		034C424C226F8F0D003CAE03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034C424D226F8F4E003CAE03 /* CategoryCollectionCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		034C4253226FAF5F003CAE03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034C4256226FB079003CAE03 /* PictoCollectionCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FA7569FCDBCB4AB542E9442 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF9EF5B02E65C106874FCE78 /* Pods_PictoBoard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44D870B8D32188CD140395D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D9C076735396A984BF50BB0 /* Pods-PictoBoard.debug.xcconfig */,
+				799E684E5330DF39F31880B4 /* Pods-PictoBoard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		034C41BC2264B95B003CAE03 /* PictoBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034C41CF2264B95C003CAE03 /* Build configuration list for PBXNativeTarget "PictoBoard" */;
+			buildPhases = (
+				9E0913C7F11D27766867D10A /* [CP] Check Pods Manifest.lock */,
+				034C41B92264B95B003CAE03 /* Sources */,
+				034C41BA2264B95B003CAE03 /* Frameworks */,
+				034C41BB2264B95B003CAE03 /* Resources */,
+				034C4220226A504F003CAE03 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PictoBoard;
+			productName = PictoBoard;
+			productReference = 034C41BD2264B95B003CAE03 /* PictoBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		034C41B52264B95B003CAE03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Zehnzen;
+				TargetAttributes = {
+					034C41BC2264B95B003CAE03 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 034C41B82264B95B003CAE03 /* Build configuration list for PBXProject "PictoBoard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 034C41B42264B95B003CAE03;
+			productRefGroup = 034C41BE2264B95B003CAE03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				034C41BC2264B95B003CAE03 /* PictoBoard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		034C41BB2264B95B003CAE03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034C4252226FAE64003CAE03 /* Pictos.storyboard in Resources */,
+				034C41CB2264B95C003CAE03 /* LaunchScreen.storyboard in Resources */,
+				034C41E92264D90F003CAE03 /* DailyTasks.storyboard in Resources */,
+				034C4257226FB079003CAE03 /* PictoCollectionCell.xib in Resources */,
+				034C41E52264D69A003CAE03 /* DailyOverview.storyboard in Resources */,
+				034C424E226F8F4E003CAE03 /* CategoryCollectionCell.xib in Resources */,
+				034C41C82264B95C003CAE03 /* Assets.xcassets in Resources */,
+				034C41FC226A1E72003CAE03 /* Categories.storyboard in Resources */,
+				034C41C62264B95B003CAE03 /* Main.storyboard in Resources */,
+				034C41E72264D8F2003CAE03 /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E0913C7F11D27766867D10A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PictoBoard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		034C41B92264B95B003CAE03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034C423E226A6786003CAE03 /* PictoOverviewViewModel.swift in Sources */,
+				034C4250226F99CB003CAE03 /* PictoCollectionVC.swift in Sources */,
+				034C41FE226A1F31003CAE03 /* CategoryCollectionVC.swift in Sources */,
+				034C41DD2264CCC7003CAE03 /* MainViewController.swift in Sources */,
+				034C41C32264B95B003CAE03 /* MainNavigationController.swift in Sources */,
+				034C41F8226A147C003CAE03 /* SettingsViewController.swift in Sources */,
+				034C4245226B6D4F003CAE03 /* SelectedPictoStore.swift in Sources */,
+				034C4204226A238F003CAE03 /* DailyTasksVC.swift in Sources */,
+				034C41F6226A144C003CAE03 /* LockSettingsViewController.swift in Sources */,
+				034C4255226FAF85003CAE03 /* PictoCollectionCell.swift in Sources */,
+				034C4207226A25AD003CAE03 /* CategoryOverviewViewModel.swift in Sources */,
+				034C420C226A284D003CAE03 /* CategoriesFileStore.swift in Sources */,
+				034C422A226A561A003CAE03 /* Picto.swift in Sources */,
+				034C41F42264EB53003CAE03 /* DailyPlanningCollectionVC.swift in Sources */,
+				034C422D226A565A003CAE03 /* PictoCategory.swift in Sources */,
+				034C41F22264EB38003CAE03 /* DailyTodoCollectionVC.swift in Sources */,
+				034C423B226A5FCB003CAE03 /* DirectoryHelper.swift in Sources */,
+				034C4247226B6DAC003CAE03 /* UserDefaultPictoStorage.swift in Sources */,
+				034C4202226A1FA1003CAE03 /* CategoryCollectionCell.swift in Sources */,
+				034C41C12264B95B003CAE03 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		034C41C42264B95B003CAE03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034C41D92264C20E003CAE03 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		034C41C92264B95C003CAE03 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034C41D82264C20E003CAE03 /* en */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		034C41CD2264B95C003CAE03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		034C41CE2264B95C003CAE03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		034C41D02264B95C003CAE03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D9C076735396A984BF50BB0 /* Pods-PictoBoard.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2PET67Q4F8;
+				INFOPLIST_FILE = "$(SRCROOT)/PictoBoard/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zehnzen.PictoBoard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		034C41D12264B95C003CAE03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 799E684E5330DF39F31880B4 /* Pods-PictoBoard.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2PET67Q4F8;
+				INFOPLIST_FILE = "$(SRCROOT)/PictoBoard/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zehnzen.PictoBoard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		034C41B82264B95B003CAE03 /* Build configuration list for PBXProject "PictoBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034C41CD2264B95C003CAE03 /* Debug */,
+				034C41CE2264B95C003CAE03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034C41CF2264B95C003CAE03 /* Build configuration list for PBXNativeTarget "PictoBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034C41D02264B95C003CAE03 /* Debug */,
+				034C41D12264B95C003CAE03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 034C41B52264B95B003CAE03 /* Project object */;
+}

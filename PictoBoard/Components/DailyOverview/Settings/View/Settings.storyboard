@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ir6-h3-DU0">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lock Settings View Controller-->
+        <scene sceneID="ElO-aJ-u0r">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ir6-h3-DU0" customClass="LockSettingsViewController" customModule="PictoBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r7P-oK-X6j">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="115"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rab-8X-GYo">
+                                <rect key="frame" x="169" y="20" width="855" height="95"/>
+                                <connections>
+                                    <segue destination="uuS-Tg-yJ8" kind="embed" id="2lk-rS-lZ7"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqk-O5-ZYE">
+                                <rect key="frame" x="57" y="27.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pqk-O5-ZYE" secondAttribute="height" multiplier="1:1" id="Qsy-yc-b2O"/>
+                                    <constraint firstAttribute="height" constant="80" id="zTX-7c-Blg"/>
+                                </constraints>
+                                <state key="normal" title="LOCK"/>
+                                <connections>
+                                    <action selector="touchDownLockButton:" destination="Ir6-h3-DU0" eventType="touchDown" id="J1O-Xf-VYp"/>
+                                    <action selector="touchUpInsideLockButton:" destination="Ir6-h3-DU0" eventType="touchUpInside" id="mjC-YL-6dL"/>
+                                    <action selector="touchUpOutsideLockButton:" destination="Ir6-h3-DU0" eventType="touchUpOutside" id="zd7-4p-lY1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hRq-T1-3xO" firstAttribute="top" secondItem="Rab-8X-GYo" secondAttribute="top" id="CHp-IS-tRS"/>
+                            <constraint firstItem="hRq-T1-3xO" firstAttribute="trailing" secondItem="Rab-8X-GYo" secondAttribute="trailing" id="MiY-wz-p9A"/>
+                            <constraint firstItem="Rab-8X-GYo" firstAttribute="leading" secondItem="pqk-O5-ZYE" secondAttribute="trailing" constant="32" id="Mps-LP-ZL9"/>
+                            <constraint firstItem="Rab-8X-GYo" firstAttribute="bottom" secondItem="hRq-T1-3xO" secondAttribute="bottom" id="WiG-Kv-V3X"/>
+                            <constraint firstItem="pqk-O5-ZYE" firstAttribute="centerY" secondItem="hRq-T1-3xO" secondAttribute="centerY" id="uQS-Dq-T9W"/>
+                            <constraint firstItem="pqk-O5-ZYE" firstAttribute="leading" secondItem="hRq-T1-3xO" secondAttribute="leading" constant="57" id="xaF-Gb-wrr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hRq-T1-3xO"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="115"/>
+                    <connections>
+                        <outlet property="lockButton" destination="pqk-O5-ZYE" id="SEf-YU-JYV"/>
+                        <outlet property="settingsContainer" destination="Rab-8X-GYo" id="2Ig-Fv-qlz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhe-GY-cxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="NQM-Ib-DCU">
+            <objects>
+                <viewController id="uuS-Tg-yJ8" customClass="SettingsViewController" customModule="PictoBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ywQ-zq-6Bs">
+                        <rect key="frame" x="0.0" y="0.0" width="855" height="95"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-9h-6QV">
+                                <rect key="frame" x="59" y="7.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nbi-9h-6QV" secondAttribute="height" multiplier="1:1" id="G5v-9h-Zt4"/>
+                                    <constraint firstAttribute="height" constant="80" id="irn-8c-Tjr"/>
+                                </constraints>
+                                <state key="normal" title="OVERVIEW"/>
+                                <connections>
+                                    <segue destination="4n5-8O-iIM" kind="show" id="EvJ-7p-t0m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNo-pT-TQN">
+                                <rect key="frame" x="177" y="7.5" width="80" height="80"/>
+                                <state key="normal" title="REWIND"/>
+                                <connections>
+                                    <action selector="pressedRewindButton:" destination="uuS-Tg-yJ8" eventType="touchUpInside" id="ygd-Hx-6BF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hNo-pT-TQN" firstAttribute="leading" secondItem="nbi-9h-6QV" secondAttribute="trailing" constant="38" id="DLv-ca-qmm"/>
+                            <constraint firstItem="nbi-9h-6QV" firstAttribute="leading" secondItem="ywQ-zq-6Bs" secondAttribute="leading" constant="59" id="KRS-Cr-uIK"/>
+                            <constraint firstItem="hNo-pT-TQN" firstAttribute="centerY" secondItem="ywQ-zq-6Bs" secondAttribute="centerY" id="Xfx-Xd-Jbd"/>
+                            <constraint firstItem="hNo-pT-TQN" firstAttribute="width" secondItem="nbi-9h-6QV" secondAttribute="height" multiplier="1:1" id="iaO-p7-Oc4"/>
+                            <constraint firstItem="hNo-pT-TQN" firstAttribute="height" secondItem="nbi-9h-6QV" secondAttribute="height" id="okK-6j-8np"/>
+                            <constraint firstItem="nbi-9h-6QV" firstAttribute="centerY" secondItem="ywQ-zq-6Bs" secondAttribute="centerY" id="rBD-53-pIN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tmX-SH-81K"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ar-jt-pia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17" y="292"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="9N1-cj-KY2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Categories" id="4n5-8O-iIM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wd3-Tt-L6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="395"/>
+        </scene>
+    </scenes>
+</document>
