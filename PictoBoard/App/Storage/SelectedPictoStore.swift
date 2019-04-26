@@ -15,23 +15,40 @@ protocol PictoStorageProtocol {
     func saveTodoPictos(_ pictos: [Picto])
 }
 
+protocol PlannedPictoDelegate {
+    func plannedPictosChanged()
+}
+
+protocol TodoPictoDelegate {
+    func todoPictosChanged()
+}
+
 class SelectedPictoStore {
     
     static let shared = SelectedPictoStore()
     
     private let storageProtocol: PictoStorageProtocol
     
+    private var plannedPictoDelegate: PlannedPictoDelegate?
+    private var todoPictoDelegate: TodoPictoDelegate?
+    
     private(set) var plannedPictos: [Picto] = [] {
         didSet {
             storageProtocol.savePlannedPictos(plannedPictos)
-            // TODO: Notify relevant classes
+            plannedPictoDelegate?.plannedPictosChanged()
         }
     }
     private(set) var todoPictos: [Picto] = [] {
         didSet {
             storageProtocol.saveTodoPictos(todoPictos)
-            // TODO: Notify relevant classes
+            todoPictoDelegate?.todoPictosChanged()
         }
+    }
+    
+    var allSelectedPictos: [Picto] {
+        var pictos = SelectedPictoStore.shared.plannedPictos
+        pictos.append(contentsOf: SelectedPictoStore.shared.todoPictos)
+        return pictos
     }
     
     // MARK: Constants
@@ -45,20 +62,60 @@ class SelectedPictoStore {
         todoPictos = storageProtocol.retrieveTodoPictos()
     }
     
-    // MARK: - Public Storage mutations
-    func addPictoToPlanned(picto: Picto) {
-        add(picto: picto, to: &plannedPictos, maxSize: SelectedPictoStore.maxPlannedPictos)
+    // MARK: Delgates
+    func setPlannedPictoDelegate(delegate: PlannedPictoDelegate) {
+        plannedPictoDelegate = delegate
     }
     
-    func addPictoToTodo(picto: Picto) {
-        add(picto: picto, to: &todoPictos, maxSize: SelectedPictoStore.maxTodoPictos)
+    func setTodoPictoDelegate(delegate: TodoPictoDelegate) {
+        todoPictoDelegate = delegate
     }
     
-    func removePictoFromPlanned(picto: Picto) {
-        remove(picto: picto, from: &plannedPictos)
+    // MARK: checks
+    func checkIfSelected(picto: Picto) -> Bool {
+        return allSelectedPictos.enumerated().contains{ $0.element == picto }
+    }
+    
+    // MARK: - public Storage mutations
+    func tryAddingToPlanned(picto: Picto) -> Bool {
+        
+        guard plannedPictos.count < SelectedPictoStore.maxPlannedPictos, !allSelectedPictos.contains(picto) else {
+            return false
+        }
+        
+        addToPlanned(picto: picto)
+        return true
+    }
+    
+    func tryTransferFromPlannedToTodo(picto: Picto) -> Bool {
+        
+        guard todoPictos.count < SelectedPictoStore.maxTodoPictos else {
+            return false
+        }
+        
+        removeFromPlanned(picto: picto)
+        addToTodo(picto: picto)
+        return true
     }
     
     func removePictoFromTodo(picto: Picto) {
+        removeFromTodo(picto: picto)
+    }
+    
+    // MARK: - Private Storage mutations
+    private func addToPlanned(picto: Picto) {
+        add(picto: picto, to: &plannedPictos, maxSize: SelectedPictoStore.maxPlannedPictos)
+    }
+    
+    private func addToTodo(picto: Picto) {
+        add(picto: picto, to: &todoPictos, maxSize: SelectedPictoStore.maxTodoPictos)
+    }
+    
+    private func removeFromPlanned(picto: Picto) {
+        remove(picto: picto, from: &plannedPictos)
+    }
+    
+    private func removeFromTodo(picto: Picto) {
         remove(picto: picto, from: &todoPictos)
     }
     

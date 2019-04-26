@@ -14,7 +14,7 @@ class UserDefaultPictoStorage {
     
     private let plannedPictosUserString = "plannedPictos"
     private let todoPictosUserstring = "todoPictos"
-    private let pictoStringSeparator = "-"
+    private let pictoStringSeparator = "_"
     private let defaults = UserDefaults.standard
     
     // MARK: Init
@@ -27,7 +27,7 @@ class UserDefaultPictoStorage {
         let components = userString.split(separator: Character(pictoStringSeparator))
         if components.count != 2 {
             if components.count != 0 {
-                print("No splitting occured")
+                print("Error: No splitting occured")
             }
             return nil
         }
@@ -61,7 +61,7 @@ extension UserDefaultPictoStorage: PictoStorageProtocol {
     }
     
     private func retrievePictos(userKey: String, maxSize: Int) -> [Picto] {
-        var pictos: [Picto]
+        var pictos: [Picto] = []
         
         for i in 0...maxSize {
             let key = "\(userKey)\(i)"
@@ -85,7 +85,7 @@ extension UserDefaultPictoStorage: PictoStorageProtocol {
     private func save(pictos: [Picto], userKey: String, maxSize: Int) {
         let size = pictos.count
         
-        for i in 0 ... maxSize {
+        for i in 0 ..< maxSize {
             
             let key = "\(userKey)\(i)"
             var userString = ""

@@ -13,13 +13,4 @@ internal final class CategoryOverviewViewModel {
     var categories: [PictoCategory] {
         return PictoCategoriesFileStore.shared.categories
     }
-    
-    func representingImage(for category: PictoCategory) -> UIImage? {
-        
-        guard let imagePath = category.pictos?.first?.path else {
-            return nil
-        }
-        
-        return UIImage.init(contentsOfFile: imagePath.absoluteString)
-    }
 }

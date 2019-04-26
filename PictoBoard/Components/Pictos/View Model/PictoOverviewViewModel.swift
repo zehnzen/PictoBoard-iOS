@@ -17,15 +17,4 @@ internal final class PictoOverviewViewModel {
     var pictos: [Picto] {
         return PictoCategoriesFileStore.shared.pictos(for: category)
     }
-    
-    var selectedPictos: [Picto] {
-        var pictos = SelectedPictoStore.shared.plannedPictos
-        pictos.append(contentsOf: SelectedPictoStore.shared.todoPictos)
-        return pictos
-    }    
-    
-    func addSelectedPicto(_ picto: Picto) {
-        // TODO: checking for adding picto to planning view ?/?
-        SelectedPictoStore.shared.addPictoToPlanned(picto: picto)
-    }
 }

@@ -1,5 +1,5 @@
 //
-//  CategoriesFileStore.swift
+//  PictoCategoriesFileStore.swift
 //  PictoBoard
 //
 //  Created by Zehna van den Berg on 19/04/2019.
@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 internal final class PictoCategoriesFileStore {
     
@@ -26,20 +27,11 @@ internal final class PictoCategoriesFileStore {
     // MARK: Getters
     func categoryURL(for categoryName: String) -> URL? {
         
-        for url in categoriesDirectories() {
-            
-            guard url.lastPathComponent == categoryName else {
-                continue
-            }
-            
-            guard FileManager.default.fileExists(atPath: url.absoluteString) else {
-                return nil
-            }
-            
-            return url
+        return categoriesDirectories()
+            .first {
+                $0.lastPathComponent == categoryName &&
+                FileManager.default.fileExists(atPath: $0.absoluteString)
         }
-        
-        return nil
     }
     
     func pictos(for category: PictoCategory) -> [Picto] {
@@ -54,6 +46,25 @@ internal final class PictoCategoriesFileStore {
         return []
     }
     
+    func image(for picto: Picto) -> UIImage? {
+        do {
+            let imageData = try Data(contentsOf: picto.path)
+            return UIImage(data: imageData)
+        } catch {
+            print("Error: Loading image failed")
+        }
+        return nil
+    }
+    
+    func representingImage(for category: PictoCategory) -> UIImage? {
+        
+        guard let picto = category.pictos?.first else {
+            return nil
+        }
+        
+        return image(for: picto)
+    }
+    
     
     // MARK: - Private loaders
     private func categoriesDirectories() -> [URL] {
@@ -65,7 +76,7 @@ internal final class PictoCategoriesFileStore {
     }
     
     private func reloadCategories() {
-        var categories: [PictoCategory]
+        var categories: [PictoCategory] = []
         
         for url in categoriesDirectories() {
             if let category = createCategory(for: url) {

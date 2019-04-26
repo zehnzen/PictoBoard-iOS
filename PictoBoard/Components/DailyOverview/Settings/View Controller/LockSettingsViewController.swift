@@ -10,7 +10,7 @@ import UIKit
 
 internal final class LockSettingsViewController: UIViewController {
     
-    private let holdDuration = 3.0 //seconds
+    private let holdDuration = 2.0 //seconds
     private var timer: Timer?
     
     @IBOutlet weak var settingsContainer: UIView!
@@ -18,10 +18,10 @@ internal final class LockSettingsViewController: UIViewController {
     
     // MARK: - State Handling
     private func toggleState() {
-        let visibleState = !settingsContainer.isHidden
+        let isHidden = settingsContainer.isHidden
         
-        settingsContainer.isHidden = !visibleState
-        lockButton.backgroundColor = visibleState ? .blue : .red // Replace with correct images
+        settingsContainer.isHidden = !isHidden
+        lockButton.backgroundColor = isHidden ? .blue : .red // Replace with correct images
     }
     
     // MARK: Timer

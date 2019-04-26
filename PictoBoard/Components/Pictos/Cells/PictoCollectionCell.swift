@@ -15,17 +15,22 @@ internal final class PictoCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var plannedButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     var isPlanned: Bool {
-        return !selectedButton.isHidden
+        return !plannedButton.isHidden
     }
     
-    func setup(planned: Bool, image: UIImage?) {
+    func setup(picto: Picto) {
+        let planned = SelectedPictoStore.shared.checkIfSelected(picto: picto)
+        let image = PictoCategoriesFileStore.shared.image(for: picto)
+        
         setPlanned(planned)
         self.imageView.image = image
+        nameLabel.text = picto.name
     }
     
-    func setPlanned(_ selected: Bool) {
-        selectedButton.isHidden = !selected
+    func setPlanned(_ planned: Bool) {
+        plannedButton.isHidden = !planned
     }
 }

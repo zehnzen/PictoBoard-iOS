@@ -22,7 +22,7 @@ internal final class CategoryCollectionViewController: UICollectionViewControlle
         // self.navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.title = "Categories"
         
-        self.collectionView.register(UINib(nibName: CategoryCollectionCell.nibName, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionCell.identifier)
+        collectionView.register(UINib(nibName: CategoryCollectionCell.nibName, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionCell.identifier)
     }
     
     // MARK: Segue
@@ -36,12 +36,11 @@ internal final class CategoryCollectionViewController: UICollectionViewControlle
     
     // MARK: Data
     func reloadData() {
-        
         guard !viewModel.categories.isEmpty else {
             return
         }
         
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
 }
 
@@ -61,7 +60,7 @@ internal extension CategoryCollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionCell.identifier, for: indexPath) as! CategoryCollectionCell
         
         let category = viewModel.categories[indexPath.row]
-        let image = viewModel.representingImage(for: category)
+        let image = PictoCategoriesFileStore.shared.representingImage(for: category)
         
         cell.setup(category: category, image: image)
         
