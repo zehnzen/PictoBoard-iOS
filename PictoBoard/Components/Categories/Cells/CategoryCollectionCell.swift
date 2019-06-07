@@ -14,10 +14,8 @@ internal final class CategoryCollectionCell: UICollectionViewCell {
     public static let identifier: String = "CategoryCollectionCell"
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     
     func setup(category: PictoCategory, image: UIImage?) {
         self.imageView.image = image
-        self.titleLabel.text = category.name
     }
 }

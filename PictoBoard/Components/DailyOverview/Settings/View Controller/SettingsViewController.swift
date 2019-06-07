@@ -16,6 +16,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func pressedRewindButton(_ sender: Any) {
-        // TODO: implement rewind function
+        RewindController.shared.rewindLastAction()
     }
 }

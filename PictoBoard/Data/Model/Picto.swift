@@ -16,16 +16,15 @@ internal final class Picto {
     
     init(path: URL, categoryName: String) {
         self.path = path
-        self.name = path.lastPathComponent
+        self.name = path.deletingPathExtension().lastPathComponent
         self.categoryName = categoryName
     }
 }
 
+// MARK: - Equatable
 extension Picto: Equatable {
-    // MARK: Equatable
     static func == (lhs: Picto, rhs: Picto) -> Bool {
         return
-            lhs.path == rhs.path &&
             lhs.name == rhs.name &&
             lhs.categoryName == rhs.categoryName
     }

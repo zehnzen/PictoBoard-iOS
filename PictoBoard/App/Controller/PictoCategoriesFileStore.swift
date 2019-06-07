@@ -15,7 +15,7 @@ internal final class PictoCategoriesFileStore {
     
     private(set) var categories: [PictoCategory] = []
     
-    private var categoriesDirectoryName = "Categories"
+    var categoriesDirectoryName = "Categories"
     
     // MARK: Init
     private init() {
@@ -30,7 +30,7 @@ internal final class PictoCategoriesFileStore {
         return categoriesDirectories()
             .first {
                 $0.lastPathComponent == categoryName &&
-                FileManager.default.fileExists(atPath: $0.absoluteString)
+                FileManager.default.fileExists(atPath: $0.path)
         }
     }
     
@@ -39,11 +39,7 @@ internal final class PictoCategoriesFileStore {
             reloadPictos(for: category)
         }
         
-        if let pictos = category.pictos {
-            return pictos
-        }
-        
-        return []
+        return category.pictos ?? []
     }
     
     func image(for picto: Picto) -> UIImage? {
@@ -58,7 +54,8 @@ internal final class PictoCategoriesFileStore {
     
     func representingImage(for category: PictoCategory) -> UIImage? {
         
-        guard let picto = category.pictos?.first else {
+        guard let picto = pictos(for: category).first else {
+            print("No first picto found for: \(category.name)")
             return nil
         }
         
@@ -68,10 +65,7 @@ internal final class PictoCategoriesFileStore {
     
     // MARK: - Private loaders
     private func categoriesDirectories() -> [URL] {
-        guard let categoriesURL = DirectoryHelper.documentDirectoryURLWith(component: categoriesDirectoryName, isDirectory: true) else {
-            return []
-        }
-        
+        let categoriesURL = DirectoryHelper.documentDirectoryURLWith(component: categoriesDirectoryName, isDirectory: true)
         return DirectoryHelper.directoryContents(at: categoriesURL)
     }
     

@@ -82,7 +82,7 @@ extension DailyTodoCollectionViewController: UICollectionViewDelegateFlowLayout 
         
         // TODO: Check correct size with use of insets
         let width = collectionView.bounds.width - 20
-        let height = (collectionView.bounds.height / 2.0) - 20
+        let height = (collectionView.bounds.height / 3.0) - 20
         
         return CGSize(width: width, height: height)
     }

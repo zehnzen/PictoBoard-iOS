@@ -12,11 +12,16 @@ internal final class DailyPlanningCollectionViewController: UICollectionViewCont
     
     private let viewModel = DailyPlanningOverviewViewModel()
     
+    private var longPressGesture: UILongPressGestureRecognizer!
+    
     // MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
         
         SelectedPictoStore.shared.setPlannedPictoDelegate(delegate: self)
+        
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(gesture:)))
+        collectionView.addGestureRecognizer(longPressGesture)
         
         collectionView.register(UINib(nibName: TaskPictoCollectionCell.nibName, bundle: nil), forCellWithReuseIdentifier: TaskPictoCollectionCell.identifier)
     }
@@ -31,10 +36,41 @@ internal final class DailyPlanningCollectionViewController: UICollectionViewCont
     }
 }
 
-// MARK: PlannedPictoDelegate
+// MARK: - PlannedPictoDelegate
 extension DailyPlanningCollectionViewController: PlannedPictoDelegate {
     func plannedPictosChanged() {
         reloadData()
+    }
+}
+
+// MARK: - LongPressGestureRecognizer
+extension DailyPlanningCollectionViewController {
+    
+    @objc func handleLongGesture(gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            beginInteractiveMovement(gesture)
+        case .changed:
+            updateInteractiveMovement(gesture)
+        case .ended:
+            collectionView.endInteractiveMovement()
+        default:
+            collectionView.cancelInteractiveMovement()
+        }
+    }
+    
+    private func beginInteractiveMovement(_ gesture: UILongPressGestureRecognizer) {
+        guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
+            return
+        }
+        collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+    }
+    
+    private func updateInteractiveMovement(_ gesture: UILongPressGestureRecognizer) {
+        guard let view = gesture.view else {
+            return
+        }
+        collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: view))
     }
 }
 
@@ -63,6 +99,7 @@ internal extension DailyPlanningCollectionViewController {
 // MARK: - CollectionViewDelegate
 internal extension DailyPlanningCollectionViewController {
     
+    // MARK: Select item
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let picto = viewModel.picto(for: indexPath)
@@ -71,6 +108,15 @@ internal extension DailyPlanningCollectionViewController {
     
     private func movePictoToTodo(picto: Picto) {
         _ = SelectedPictoStore.shared.tryTransferFromPlannedToTodo(picto: picto)
+    }
+    
+    // MARK: Move item
+    override func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        SelectedPictoStore.shared.reorderPlanned(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
 }
 

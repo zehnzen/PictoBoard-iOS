@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Daily Tasks View Controller-->
+        <!--View Controller-->
         <scene sceneID="wuR-b8-qIs">
             <objects>
-                <viewController id="bJ0-W7-JKd" customClass="DailyTasksViewController" customModule="PictoBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bJ0-W7-JKd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r8a-lj-BGR">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="633"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="grC-1g-LHL"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <size key="freeformSize" width="1024" height="633"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqJ-cq-QK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,7 +63,7 @@
         <scene sceneID="UQC-SY-seT">
             <objects>
                 <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="QJm-5M-ywm" customClass="DailyTodoCollectionViewController" customModule="PictoBoard" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" id="Fl8-ZJ-a2y">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" id="Fl8-ZJ-a2y">
                         <rect key="frame" x="0.0" y="0.0" width="307" height="613"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,6 +79,7 @@
                             <outlet property="delegate" destination="QJm-5M-ywm" id="hTx-oe-Zde"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtS-cS-tc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,10 +105,11 @@
                             <outlet property="delegate" destination="jOr-Ih-eLs" id="fwb-Gc-ITl"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jI3-Vh-z8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="1242"/>
+            <point key="canvasLocation" x="-73" y="709"/>
         </scene>
     </scenes>
 </document>

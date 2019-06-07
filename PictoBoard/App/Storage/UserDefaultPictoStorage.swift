@@ -32,19 +32,21 @@ class UserDefaultPictoStorage {
             return nil
         }
         
-        let url = URL(fileURLWithPath: String(components[0]))
         let categoryName = String(components[1])
         
-        if !FileManager.default.fileExists(atPath: url.absoluteString) {
-            print("No file found at userString path")
+        let categoriesUrl = DirectoryHelper.documentDirectoryURLWith(component: PictoCategoriesFileStore.shared.categoriesDirectoryName, isDirectory: true)
+        let pictoUrl = categoriesUrl.appendingPathComponent(categoryName).appendingPathComponent(String(components[0]))
+        
+        if !FileManager.default.isReadableFile(atPath: pictoUrl.path) {
+            print("No file found at constructed picto path")
             return nil
         }
         
-        return Picto(path: url, categoryName: categoryName)
+        return Picto(path: pictoUrl, categoryName: categoryName)
     }
     
     private func createUserPictoString(from picto: Picto) -> String {
-        return  picto.path.absoluteString + pictoStringSeparator + picto.categoryName
+        return  picto.path.lastPathComponent + pictoStringSeparator + picto.categoryName
     }
 }
 

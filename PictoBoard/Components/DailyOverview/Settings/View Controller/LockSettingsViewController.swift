@@ -21,7 +21,8 @@ internal final class LockSettingsViewController: UIViewController {
         let isHidden = settingsContainer.isHidden
         
         settingsContainer.isHidden = !isHidden
-        lockButton.backgroundColor = isHidden ? .blue : .red // Replace with correct images
+        let lockImage = !isHidden ? #imageLiteral(resourceName: "lock_50.png") : #imageLiteral(resourceName: "unlock_50.png")
+        lockButton.setImage(lockImage, for: .normal)
     }
     
     // MARK: Timer

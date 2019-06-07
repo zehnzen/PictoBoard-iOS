@@ -10,6 +10,10 @@ import Foundation
 
 internal final class DirectoryHelper {
     
+    static var documentsUrl: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
+    
     static func directoryContents(at url: URL) -> [URL] {
         
         let contents: [URL]
@@ -23,7 +27,7 @@ internal final class DirectoryHelper {
         return contents
     }
     
-    static func documentDirectoryURLWith(component: String, isDirectory: Bool) -> URL? {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(component, isDirectory: isDirectory)
+    static func documentDirectoryURLWith(component: String, isDirectory: Bool) -> URL {
+        return DirectoryHelper.documentsUrl.appendingPathComponent(component, isDirectory: isDirectory)
     }
 }

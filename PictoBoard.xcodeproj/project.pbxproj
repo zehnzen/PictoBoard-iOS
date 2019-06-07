@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0301E263227F6498003A3ED2 /* RewindController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301E262227F6498003A3ED2 /* RewindController.swift */; };
+		0301E26922809EDD003A3ED2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0301E26822809EDD003A3ED2 /* Icons.xcassets */; };
 		033264E02271DAC300D3A14D /* DailyPlanningOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033264DF2271DAC300D3A14D /* DailyPlanningOverviewViewModel.swift */; };
 		033264E22271DB2300D3A14D /* DailyTodoOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033264E12271DB2300D3A14D /* DailyTodoOverviewViewModel.swift */; };
 		033264E82271DCD500D3A14D /* TaskPictoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033264E72271DCD500D3A14D /* TaskPictoCollectionCell.xib */; };
@@ -28,7 +30,6 @@
 		034C41FC226A1E72003CAE03 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C41FB226A1E72003CAE03 /* Categories.storyboard */; };
 		034C41FE226A1F31003CAE03 /* CategoryCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C41FD226A1F31003CAE03 /* CategoryCollectionVC.swift */; };
 		034C4202226A1FA1003CAE03 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4201226A1FA1003CAE03 /* CategoryCollectionCell.swift */; };
-		034C4204226A238F003CAE03 /* DailyTasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4203226A238F003CAE03 /* DailyTasksVC.swift */; };
 		034C4207226A25AD003CAE03 /* CategoryOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4206226A25AD003CAE03 /* CategoryOverviewViewModel.swift */; };
 		034C420C226A284D003CAE03 /* PictoCategoriesFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C420B226A284D003CAE03 /* PictoCategoriesFileStore.swift */; };
 		034C422A226A561A003CAE03 /* Picto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C4229226A561A003CAE03 /* Picto.swift */; };
@@ -61,6 +62,8 @@
 /* Begin PBXFileReference section */
 		0301E25C227376CF003A3ED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0301E25D227376CF003A3ED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0301E262227F6498003A3ED2 /* RewindController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewindController.swift; sourceTree = "<group>"; };
+		0301E26822809EDD003A3ED2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		033264DF2271DAC300D3A14D /* DailyPlanningOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPlanningOverviewViewModel.swift; sourceTree = "<group>"; };
 		033264E12271DB2300D3A14D /* DailyTodoOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTodoOverviewViewModel.swift; sourceTree = "<group>"; };
 		033264E72271DCD500D3A14D /* TaskPictoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskPictoCollectionCell.xib; sourceTree = "<group>"; };
@@ -82,7 +85,6 @@
 		034C41FB226A1E72003CAE03 /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
 		034C41FD226A1F31003CAE03 /* CategoryCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionVC.swift; sourceTree = "<group>"; };
 		034C4201226A1FA1003CAE03 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
-		034C4203226A238F003CAE03 /* DailyTasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksVC.swift; sourceTree = "<group>"; };
 		034C4206226A25AD003CAE03 /* CategoryOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOverviewViewModel.swift; sourceTree = "<group>"; };
 		034C420B226A284D003CAE03 /* PictoCategoriesFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictoCategoriesFileStore.swift; sourceTree = "<group>"; };
 		034C4216226A504F003CAE03 /* PictoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictoData.h; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				034C41C02264B95B003CAE03 /* AppDelegate.swift */,
 				034C420B226A284D003CAE03 /* PictoCategoriesFileStore.swift */,
+				0301E262227F6498003A3ED2 /* RewindController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				034C41C72264B95C003CAE03 /* Assets.xcassets */,
+				0301E26822809EDD003A3ED2 /* Icons.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -328,7 +332,6 @@
 			children = (
 				034C41F12264EB38003CAE03 /* DailyTodoCollectionVC.swift */,
 				034C41F32264EB53003CAE03 /* DailyPlanningCollectionVC.swift */,
-				034C4203226A238F003CAE03 /* DailyTasksVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				034C4257226FB079003CAE03 /* PictoCollectionCell.xib in Resources */,
 				034C41E52264D69A003CAE03 /* DailyOverview.storyboard in Resources */,
 				034C424E226F8F4E003CAE03 /* CategoryCollectionCell.xib in Resources */,
+				0301E26922809EDD003A3ED2 /* Icons.xcassets in Resources */,
 				034C41C82264B95C003CAE03 /* Assets.xcassets in Resources */,
 				034C41FC226A1E72003CAE03 /* Categories.storyboard in Resources */,
 				034C41C62264B95B003CAE03 /* Main.storyboard in Resources */,
@@ -636,8 +640,8 @@
 				034C41C32264B95B003CAE03 /* MainNavigationController.swift in Sources */,
 				034C41F8226A147C003CAE03 /* SettingsViewController.swift in Sources */,
 				034C4245226B6D4F003CAE03 /* SelectedPictoStore.swift in Sources */,
-				034C4204226A238F003CAE03 /* DailyTasksVC.swift in Sources */,
 				034C41F6226A144C003CAE03 /* LockSettingsViewController.swift in Sources */,
+				0301E263227F6498003A3ED2 /* RewindController.swift in Sources */,
 				034C4255226FAF85003CAE03 /* PictoCollectionCell.swift in Sources */,
 				034C4207226A25AD003CAE03 /* CategoryOverviewViewModel.swift in Sources */,
 				034C420C226A284D003CAE03 /* PictoCategoriesFileStore.swift in Sources */,

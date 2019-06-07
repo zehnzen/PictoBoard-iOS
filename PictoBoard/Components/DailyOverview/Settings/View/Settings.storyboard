@@ -23,13 +23,14 @@
                                     <segue destination="uuS-Tg-yJ8" kind="embed" id="2lk-rS-lZ7"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqk-O5-ZYE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqk-O5-ZYE">
                                 <rect key="frame" x="57" y="27.5" width="80" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pqk-O5-ZYE" secondAttribute="height" multiplier="1:1" id="Qsy-yc-b2O"/>
                                     <constraint firstAttribute="height" constant="80" id="zTX-7c-Blg"/>
                                 </constraints>
-                                <state key="normal" title="LOCK"/>
+                                <state key="normal" image="lock_50.png"/>
                                 <connections>
                                     <action selector="touchDownLockButton:" destination="Ir6-h3-DU0" eventType="touchDown" id="J1O-Xf-VYp"/>
                                     <action selector="touchUpInsideLockButton:" destination="Ir6-h3-DU0" eventType="touchUpInside" id="mjC-YL-6dL"/>
@@ -112,4 +113,7 @@
             <point key="canvasLocation" x="19" y="-55"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lock_50.png" width="37.5" height="37.5"/>
+    </resources>
 </document>

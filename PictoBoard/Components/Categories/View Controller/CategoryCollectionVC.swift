@@ -18,8 +18,7 @@ internal final class CategoryCollectionViewController: UICollectionViewControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Check if needed
-        // self.navigationController?.setNavigationBarHidden(false, animated: false)
+        // TODO: Check why title isn't set
         navigationController?.title = "Categories"
         
         collectionView.register(UINib(nibName: CategoryCollectionCell.nibName, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionCell.identifier)

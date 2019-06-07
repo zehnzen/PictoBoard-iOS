@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - PictoStorageProtocol
 protocol PictoStorageProtocol {
     func retrievePlannedPictos() -> [Picto]
     func retrieveTodoPictos() -> [Picto]
@@ -15,6 +16,7 @@ protocol PictoStorageProtocol {
     func saveTodoPictos(_ pictos: [Picto])
 }
 
+// MARK: - DelegateProtocols
 protocol PlannedPictoDelegate {
     func plannedPictosChanged()
 }
@@ -23,6 +25,7 @@ protocol TodoPictoDelegate {
     func todoPictosChanged()
 }
 
+// MARK: - SelectedPictoStore
 class SelectedPictoStore {
     
     static let shared = SelectedPictoStore()
@@ -62,12 +65,18 @@ class SelectedPictoStore {
         todoPictos = storageProtocol.retrieveTodoPictos()
     }
     
-    // MARK: Delgates
+    // MARK: Delegates
     func setPlannedPictoDelegate(delegate: PlannedPictoDelegate) {
+        if plannedPictoDelegate != nil {
+            print("plannedPictoDelegate changed after having been set, consider allowing multiple observers")
+        }
         plannedPictoDelegate = delegate
     }
     
     func setTodoPictoDelegate(delegate: TodoPictoDelegate) {
+        if todoPictoDelegate != nil {
+            print("todoPictoDelegate changed after having been set, consider allowing multiple observers")
+        }
         todoPictoDelegate = delegate
     }
     
@@ -76,7 +85,28 @@ class SelectedPictoStore {
         return allSelectedPictos.enumerated().contains{ $0.element == picto }
     }
     
-    // MARK: - public Storage mutations
+    enum SelectedState {
+        case not
+        case planned
+        case todo
+    }
+    
+    func checkState(picto: Picto) -> SelectedState {
+        if plannedPictos.contains(picto) {
+            return .planned
+        }
+        
+        if todoPictos.contains(picto) {
+            return .todo
+        }
+        
+        return .not
+    }
+}
+
+// MARK: - Overview mutations
+extension SelectedPictoStore {
+    
     func tryAddingToPlanned(picto: Picto) -> Bool {
         
         guard plannedPictos.count < SelectedPictoStore.maxPlannedPictos, !allSelectedPictos.contains(picto) else {
@@ -84,6 +114,7 @@ class SelectedPictoStore {
         }
         
         addToPlanned(picto: picto)
+        RewindController.shared.addAction(RewindAction(type: .addPlanned, picto: picto))
         return true
     }
     
@@ -93,16 +124,55 @@ class SelectedPictoStore {
             return false
         }
         
+        let position = plannedPictos.firstIndex(of: picto)
         removeFromPlanned(picto: picto)
         addToTodo(picto: picto)
+        RewindController.shared.addAction(RewindAction(type: .transferPlannedToTodo, picto: picto, position: position))
         return true
     }
     
-    func removePictoFromTodo(picto: Picto) {
-        removeFromTodo(picto: picto)
+    func removePictoFromPlanned(picto: Picto) {
+        let position = plannedPictos.firstIndex(of: picto)
+        removeFromPlanned(picto: picto)
+        RewindController.shared.addAction(RewindAction(type: .removePlanned, picto: picto, position: position))
     }
     
-    // MARK: - Private Storage mutations
+    func removePictoFromTodo(picto: Picto) {
+        let position = todoPictos.firstIndex(of: picto)
+        removeFromTodo(picto: picto)
+        RewindController.shared.addAction(RewindAction(type: .removeTodo, picto: picto, position: position))
+    }
+    
+    func reorderPlanned(from: Int, to: Int) {
+        reorderInPlanned(from: from, to: to)
+    }
+}
+
+// MARK: - Rewind mutations
+extension SelectedPictoStore {
+    
+    func rewindAddToPlanned(picto: Picto) {
+        removeFromPlanned(picto: picto)
+    }
+    
+    func rewindTransferFromPlannedToTodo(picto: Picto, position: Int) {
+        removeFromTodo(picto: picto)
+        insertToPlanned(picto: picto, at: position)
+    }
+    
+    func rewindRemoveFromPlanned(picto: Picto, position: Int) {
+        insertToPlanned(picto: picto, at: position)
+    }
+    
+    func rewindRemoveFromTodo(picto: Picto, position: Int) {
+        insertToTodo(picto: picto, at: position)
+    }
+}
+
+// MARK: - Private Storage mutations
+private extension SelectedPictoStore {
+    
+    // MARK: Simple add/removal
     private func addToPlanned(picto: Picto) {
         add(picto: picto, to: &plannedPictos, maxSize: SelectedPictoStore.maxPlannedPictos)
     }
@@ -119,7 +189,22 @@ class SelectedPictoStore {
         remove(picto: picto, from: &todoPictos)
     }
     
-    // MARK: private inout array functions
+    // MARK: Insertion
+    private func insertToPlanned(picto: Picto, at: Int) {
+        insert(picto: picto, to: &plannedPictos, at: at)
+    }
+    
+    private func insertToTodo(picto: Picto, at: Int) {
+        insert(picto: picto, to: &todoPictos, at: at)
+    }
+    
+    // MARK: Reordering
+    private func reorderInPlanned(from: Int, to: Int) {
+        let picto = plannedPictos.remove(at: from)
+        plannedPictos.insert(picto, at: to)
+    }
+    
+    // MARK: private inout Picto array functions
     private func add(picto: Picto, to array: inout [Picto], maxSize: Int) {
         guard array.count < maxSize else {
             return
@@ -134,5 +219,9 @@ class SelectedPictoStore {
         }
         
         array.remove(at: index)
+    }
+    
+    private func insert(picto: Picto, to array: inout [Picto], at: Int) {
+        array.insert(picto, at: at)
     }
 }
